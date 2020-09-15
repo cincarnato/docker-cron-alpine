@@ -1,7 +1,12 @@
 version: '3.5'
 
 services:
-  docker-cron:
+  docker-app:
     build: .
+    container_name: docker-app
+    image: docker-cron
+
+  docker-cron:
+    container_name: docker-cron
     image: docker-cron
     entrypoint: 'crond -f -l 2'
